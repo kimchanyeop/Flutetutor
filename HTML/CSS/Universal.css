@@ -1,0 +1,201 @@
+* {
+    margin: 0;
+    padding: 0;
+    user-select: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+div#emptyspace {
+    height: 70px;
+}
+
+body.blur {
+    background-color: white;
+}
+
+body.blur.show > *:not(div.signup.show) {
+    filter: blur(3px);
+    -webkit-filter: blur(2px);
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+#logo {
+    height: 50px;
+    width: 100px;  
+    vertical-align: middle;
+}
+
+nav hr {
+    border-top: 1px solid lightgray;
+}
+
+#navbar{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    z-index: 99 !important;
+}
+
+#navbar ul li a {
+    text-decoration: none;
+    color: gray;
+}
+
+#navbar ul li a#current{
+    border-bottom: #AC3B61 solid 2px;
+}
+
+#navbar ul li a:hover {
+    text-decoration: none;
+    color: #AC3B61;
+}
+
+
+div.signup {
+    display: none;
+    position: absolute;
+}
+
+div.signup.show {
+    padding:10px;
+    position: fixed;
+    background-color: #EDC7B7;
+    border-radius: 25px;
+    height: clamp(300px, 50%, 500px);
+    width: clamp(420px, 70%, 700px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99 !important;
+    display: flex;
+    justify-content: center;
+}
+
+div.signup.show h2 {
+    position: relative;
+    color: #AC3B61;
+    text-align: center;
+}
+
+div.signup.show img {
+    height: 25px;
+    width: 25px;
+    cursor: pointer;
+}
+
+div#signup_content {
+    position: relative;
+    height: 50%;
+    width: 80%;
+    top: 30%;
+}
+
+label > * {
+    vertical-align: middle;
+}
+
+input#email {
+    width: 75%;
+    cursor: text;
+}
+
+input#submit {
+    width: 20%;
+}
+
+input#name {
+    width: 30%;
+    cursor: text;
+}
+input {
+    height: 25px;
+}
+
+#navbar, #signup, #social_media {
+    text-align: left;
+}
+
+#ham {
+    display: none;
+}
+
+.fa {
+    display: block;
+    padding: 20px 5px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: auto 0;
+    color: white;
+}
+  
+  
+
+
+#social_media {
+    width: 100%;
+    bottom: 0;
+    font-size: 25px;
+    height: 65px;
+    background-color: gray;
+}
+
+
+@media screen and (min-width: 651px) {
+    #navbar ul li {
+        display: inline-block;
+        padding: 10px;
+        list-style: none;
+    
+    }
+}
+
+@media  screen and (max-width: 650px) {
+    #navbar ul li {
+        padding: 10px;
+        list-style: none;
+    }
+
+    #navbar ul li img {
+        display: inline-block;
+    }
+
+    #navbar ul li img:first-child {
+        vertical-align: top;
+    }
+
+    #ham {
+        height: 50px;
+        float:right;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu.show {
+        display: block;
+        animation: growDown 300ms ease-in-out forwards;
+        transform-origin: top;
+    }
+
+    @keyframes growDown {
+        0% {
+            transform: scaleY(0)
+        }
+        80% {
+            transform: scaleY(1.2)
+        }
+        100% {
+            transform: scaleY(1)
+        }
+    }
+    
+}

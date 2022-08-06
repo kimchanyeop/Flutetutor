@@ -1,0 +1,33 @@
+
+div.slide_img {
+    display: none;
+}
+
+div#back, div#next {
+    height: 100%;
+    width: 100%;
+    
+}
+
+div#back:hover, div#next:hover {
+    background-color: lightgray;
+    opacity: 60%;
+}
+
+img#arrow {
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+#slideshow {
+    width: clamp(300px, 100%, 1000px);
+    display: grid;
+    grid-template-columns: 5% 90% 5%;
+    margin: 0 auto;
+}
+
+#slideshow img {
+    width:100%;
+}

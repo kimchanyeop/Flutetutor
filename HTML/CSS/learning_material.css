@@ -1,0 +1,76 @@
+#content_nav {
+    float: left;
+    padding: 20px;
+    background-color: lightgray;
+}
+
+hr {
+    border: 1px solid gray;
+}
+
+#content_nav li {
+    list-style: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+#container {
+    height: calc(100% - 70px);
+    display: grid;
+    grid-template-columns: 150px auto;
+}
+
+#file {
+    list-style: none;
+}
+
+
+iframe {
+    width:100%;
+    height: 100%;
+}
+
+.etudes {
+    display: none;
+}
+
+#arrow {
+    width: 10px;
+}
+
+.etudes.show {
+    display: block;
+    animation: growDown 300ms ease-in-out forwards;
+    transform-origin: top;
+}
+
+@keyframes growDown {
+    0% {
+        transform: scaleY(0)
+    }
+    100% {
+        transform: scaleY(1)
+    }
+}
+@media screen and (max-width:650px) {
+    #container {
+        width: 100%;
+        height:fit-content;
+        display: block;
+        text-align: center;
+    }
+
+
+    #content_nav {
+        width: 90%;
+        float: none;
+        margin: 10 auto;
+    }
+
+    #pdf {
+        width: 80%;
+        height: 700px;
+        margin: 10px auto;
+    }
+}

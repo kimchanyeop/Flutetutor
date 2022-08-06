@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" href="../CSS/Universal.css">     
+        <link rel="stylesheet" href="../CSS/Home.css">   
+        <link rel="stylesheet" href="../CSS/Content.css">
+        <link rel="stylesheet" href="../CSS/slide.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body id="background" class="blur">
+        <script src="../JS/signup.js"></script>
+        <script src="../JS/hamburger.js"></script>
+        
+        <nav id="navbar">
+            <ul>
+                <li><img id="logo" src="../Media/logo.png" alt=""><img src="../media/hamburger.png" id="ham" onclick="show_menu()"></li>
+                <li class="menu"><a href="../index.html" id="current">Home</a></li>
+                <li class="menu"><a href="../Learning_material.html">Learning Material</a></li>
+                <li class="menu" id="feed"><a href="../feedback.html">Request Feedback</a>
+                <li class="menu" id="feed"><a href="../give_feedback.html" >Give Feedback</a>
+                <li onclick="signup()" class="menu"><a>SignUp</a></li>
+            </ul>
+            <hr>
+        </nav id="navbar">
+        <div id="signup" class="signup">
+            <img src="../Media/cancel.png" alt="" onclick="signup()">            
+            <div id="signup_content">
+                <h2>Sign Up for our newsletter!</h2>
+                <form action="../signup.html" method="get">             
+                    <label>Name:<br>
+                        <input type="text" name="name" id="name" required>
+                    </label>
+                    <br>
+                    <label>Male
+                        <input type="radio" id="gender" name="gender" value="male">
+                    </label> 
+                    <label>Female
+                        <input type="radio" id="gender" name="gender" value="female">
+                    </label>    
+                    <br>
+                    <label>Email:<br>
+                        <input type="email" name="email" id="email" placeholder="example@example.com" required>
+                    </label>                 
+                    <input type="submit" value="Sign Up" id="submit">
+                </form>
+            </div>
+        </div>
+        <div id="emptyspace"></div>
+        <h1>What is flute made out of?</h1>
+        <div id="slideshow">
+            <div id="back" onclick="back()">
+                <img src="../Media/left-arrow.png" id="arrow">
+            </div>
+            <div>
+                <img class="slide_img" src="../Media/silverplated.jpg">
+                <img class="slide_img" src="../Media/fullsilver.jpg">
+                <img class="slide_img" src="../Media/gold.jpg">
+                <img class="slide_img" src="../Media/plat.jpg">
+                <img class="slide_img" src="../Media/wood.jpg">
+            </div>
+            <div id="next" onclick="next()">
+                <img src="../Media/right-arrow.png" id="arrow">
+            </div>
+        </div>
+        <div id="slide_text">
+            <div class="text">
+                <p>Yamaha yfl-222(nickle, silverplated)</p>
+            </div>
+            <div class="text">
+                <p>Yamaha yfl-462(full silver)</p>
+            </div>
+            <div class="text">
+                <p>Muramatsu handmade 14k gold flute</p>
+            </div>
+            <div class="text">
+                <p>William S. Haynes Handmade Custom Flute in Platinum</p>
+            </div>
+            <div class="text">
+                <p>Sankyo wooden flute</p>
+            </div>
+        </div>
+        <script src="../JS/slideshow.js"></script>
+        <div id="content">
+            <div>                
+                 <h3>Structures of flute</h3>
+                 <hr>
+                 <ul>
+                     <li><a href="Parts.html">Parts of flute</a></li>
+                     <li><a href="Material.html">What is flute made of?</a></li>
+                     <li><a href="Mechanism.html">Mechanism of flute</a></li>
+                 </ul>
+             </div>
+            <div>
+                 <h3>How to play</h3>
+                 <hr>
+                 <ul>
+                     <li><a href="../How to play/playing.html">Basics of playing the flute</a></li>
+                 </ul>
+            </div>
+            <div>
+                 <h3>Maintenance</h3>
+                 <hr>
+                 <ul>
+                     <li><a href="../Maintenance/Afterplaying.html">Maintenance after playing</a></li>
+                     <li><a href="../Maintenance/Periodic.html">Periodic maintenance</a></li>
+                 </ul>
+             </div>
+         </div>
+         <div id="social_media">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,58 @@
+
+#feedback {
+    padding: 10px;
+    width: clamp(300px, 60%, 600px);
+    margin: 10px 40px;
+}
+
+
+#description {
+   width: 100%;
+}
+
+.dk {
+    background-color: #9da8c0 ;
+    padding: 20px;
+}
+
+.wh {
+    color: white;
+}
+
+.no {
+    margin: 5px;
+    border: none;
+    border-radius: 15px;
+    padding: 5px;
+    outline: none;
+}
+
+
+
+.co {
+    color: grey;
+    padding: 5px;
+    border: 1px solid #9da8c0;
+    outline: none;
+}
+
+
+fieldset {
+    color: grey;
+    border: 5px solid #9da8c0;
+    border-radius: 10px;
+}
+
+.wide{
+    width: 67px;
+}
+
+.greyhr {
+    border: 1px lightgrey solid;
+}
+
+.grey {
+    color: grey;
+}
+
+
