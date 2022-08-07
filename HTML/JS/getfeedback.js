@@ -8,10 +8,6 @@ function getFeedback() {
         create(list[i].title,list[i].description, list[i].recording, list[i].id);
     }
     if (check_comment() !== undefined) {
-        if (localStorage.getItem('comment_list') == '') {
-            comment_list = [];
-            localStorage.setItem('comment_list', JSON.stringify(comment_list));
-        }
         comment_list = JSON.parse(localStorage.getItem('comment_list'));
         console.log(comment_list)
         for (i=0;i<comment_list.length;i++){
@@ -74,16 +70,6 @@ function comment(a) {
 }
 
 function remove(a) {
-    for (i=0;i<list.length;i++){
-        if (list[i].recording == a.src){
-            delete list[i];
-            localStorage.setItem('list', list);
-        }   
-        if (comment_list[i].id == a.parentElement.id){
-            delete comment_list[i];
-            localStorage.setItem('comment_list', comment_list);
-            
-        }
-    }
+    locationStorage.clear()
     location.reload()
 }
