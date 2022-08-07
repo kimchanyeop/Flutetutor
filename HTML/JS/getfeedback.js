@@ -8,12 +8,16 @@ function getFeedback() {
         create(list[i].title,list[i].description, list[i].recording, list[i].id);
     }
     if (check_comment() !== undefined) {
+        if (localStorage.getItem('comment_list') == '') {
+            comment_list = [];
+            localStorage.setItem('comment_list', JSON.stringify(comment_list));
+        }
         comment_list = JSON.parse(localStorage.getItem('comment_list'));
         console.log(comment_list)
         for (i=0;i<comment_list.length;i++){
             var div = document.getElementById(comment_list[i].id);
             var p = document.createElement('p');    
-            date = new Date()
+            date = comment_list[i].date
             p.innerHTML = date + "<br> <p>"+ comment_list[i].comment +"</p> <br>"
             p.setAttribute('class', 'wh')
             div.append(p)
@@ -53,16 +57,18 @@ function create(a, b, c, d) {
 
 function comment(a) {
     if (check_comment() !== undefined) {
-        comment_list = JSON.parse(localStorage.getItem('comment_list'));
+        comment_list = JSON.parse(localStorage.getItem('comment_list'));      
         }
     else{
         comment_list = []
         localStorage.setItem('comment_list', comment_list)
-}
+    }
     var id  = a.parentElement.id;
     var div = document.getElementById(id);
     var comment = div.children[5].children[0].value;
-    comment_list.push({'id':id,'comment':comment});
+    var date = new Date()
+    comment_list.push({'id':id,'comment':comment,'date':date.toString()});
+    console.log(comment_list);
     localStorage.setItem('comment_list', JSON.stringify(comment_list));
     location.reload()
 }
@@ -72,7 +78,12 @@ function remove(a) {
         if (list[i].recording == a.src){
             delete list[i];
             localStorage.setItem('list', list);
-        }    
+        }   
+        if (comment_list[i].id == a.parentElement.id){
+            delete comment_list[i];
+            localStorage.setItem('comment_list', comment_list);
+            
+        }
     }
     location.reload()
 }
