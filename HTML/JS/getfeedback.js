@@ -45,7 +45,7 @@ function create(a, b, c, d) {
     var parentdiv = document.getElementById('area');
     parentdiv.append(newdiv);
     var div = document.getElementById(d);
-    div.innerHTML = '<h2 class="wh">'+ a +'</h2>' + '<p class="wh">' + b + '</p> <br> <audio controls onerror="remove(this)" src="' + c + '"></audio> <br> <label class="wh"> Comment: <textarea class="no" cols="30" rows="8"></textarea></label> <button onclick="comment(this)" class="no wide">submit</button>';
+    div.innerHTML = '<h2 class="wh">'+ a +'</h2>' + '<p class="wh">' + b + '</p> <br> <audio controls onerror="remove()" src="' + c + '"></audio> <br> <label class="wh"> Comment: <textarea class="no" cols="30" rows="8"></textarea></label> <button onclick="comment(this)" class="no wide">submit</button>';
     parentdiv.appendChild(document.createElement('hr'));
 }
 
@@ -69,7 +69,7 @@ function comment(a) {
     location.reload()
 }
 
-function remove(a) {
-    locationStorage.clear()
+function remove() {
+    localStorage.clear()
     location.reload()
 }
