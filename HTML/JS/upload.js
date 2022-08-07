@@ -22,16 +22,20 @@ function upload() {
     if (recording == null || title == '' || description == ''){
            alert('please fill in all the component')
         }
-   else{
+    else if (recording.type !== "audio/mpeg") {
+        alert('Only mp3 file is allowed to be uploaded')
+    }
+    else{
     var recordingURL = convertURL(recording);
     list.push({'title':title, 'description':description, 'recording':recordingURL, 'id':id});
     localStorage.setItem('list', JSON.stringify(list))
-   }
+    alert('successful\r\nPlease open "Give Feedback" page in a new window')
+
+    }
    document.getElementById('title').value = "";
    document.getElementById('description').value = "";
    document.getElementById('recording').value = "";
-   alert('successful\r\nPlease open "Give Feedback" page in a new window')
-
+   
 }
 
 function convertURL(a) {
